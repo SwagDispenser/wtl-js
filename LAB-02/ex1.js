@@ -17,7 +17,6 @@ let obj2 = {
     age: 20
 };
 
-// порівняння властивостей
 if (obj1.name === obj2.name && obj1.age === obj2.age) {
     alert("Об'єкти однакові");
 } else {

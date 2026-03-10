@@ -20,20 +20,9 @@ if (markTrue) {
 
 let season = Number(prompt("Введіть номер місяця"));
 let seasonTrue = (season >= 1 && season <= 12);
-if (seasonTrue) {
-    if (season >= 1 && season <= 2 || season === 12) {
-        alert("Зима");
-    }
-    if (season >= 3 && season <= 5) {
-        alert("Весна");
-    }
-    if (season >= 6 && season <= 8) {
-        alert("Літо");
-    }
-    if (season >=9 && season <= 11) {
-        alert("Осінь");
-    }
-}
-
-
-
+seasonTrue
+    ? alert (
+        (season >= 1 && season <= 2 || season === 12) ? "Зима" :
+            (season >= 3 && season <= 5) ? "Весна" :
+                (season >= 6 && season <= 8) ? "Літо" :
+                    (season >=9 && season <= 11) ? "Осінь" : "" ) : "Немає такого місяця"

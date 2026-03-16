@@ -25,4 +25,7 @@ switch (season) {
     break;
     case 12: console.log("december");
     break;
+    default:
+        console.log("wrong number");
+        break;
 }

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>3</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial;
+    }
+
+    .clock {
+      font-size: 40px;
+      margin: 20px;
+    }
+
+    .blink {
+      opacity: 0;
+    }
+
+    table {
+      margin: 20px auto;
+      border-collapse: collapse;
+    }
+
+    td, th {
+      border: 1px solid black;
+      padding: 5px;
+      width: 40px;
+    }
+  </style>
+</head>
+<body>
+
+<div class="clock" id="clock"></div>
+
+<input type="datetime-local" id="targetDate">
+<button onclick="startCountdown()">Старт</button>
+<div id="countdown"></div>
+
+<input type="month" id="monthPicker" onchange="renderCalendar()">
+<div id="calendar"></div>
+
+<input type="date" id="birthday">
+<button onclick="calculateBirthday()">Порахувати</button>
+<div id="birthdayResult"></div>
+
+<script src="index.js">
+</script>
+
+</body>
+</html>

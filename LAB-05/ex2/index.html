@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="UTF-8">
+  <title>2</title>
+  <style>
+    body {
+      text-align: center;
+      font-family: Arial;
+    }
+
+    .traffic-light {
+      width: 100px;
+      background: black;
+      padding: 10px;
+      border-radius: 10px;
+      margin: 20px auto;
+    }
+
+    .light {
+      width: 60px;
+      height: 60px;
+      margin: 10px auto;
+      border-radius: 50%;
+      background: #333;
+      transition: 0.3s;
+    }
+
+    .red.on { background: red; }
+    .yellow.on { background: yellow; }
+    .green.on { background: lime; }
+
+  </style>
+</head>
+<body>
+
+<h2>Світлофор</h2>
+
+<div class="traffic-light">
+  <div id="red" class="light red"></div>
+  <div id="yellow" class="light yellow"></div>
+  <div id="green" class="light green"></div>
+</div>
+
+<h3 id="status">Статус: -</h3>
+
+<button onclick="startTraffic()">Старт</button>
+<button onclick="nextStateManual()">Наступний стан</button>
+<button onclick="changeTiming()">Змінити час</button>
+
+<script src="index.js"></script>
+
+</body>
+</html>

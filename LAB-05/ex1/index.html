@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <title>1</title>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial;
+        }
+
+        .lamp {
+            width: 150px;
+            height: 250px;
+            margin: 20px auto;
+            background: gray;
+            border-radius: 50% 50% 40% 40%;
+            transition: 0.3s;
+        }
+
+        .on {
+            background: yellow;
+            box-shadow: 0 0 50px yellow;
+        }
+
+        .led.on {
+            background: #e6f7ff;
+            box-shadow: 0 0 40px #66ccff;
+        }
+
+        .eco.on {
+            background: #ccff99;
+            box-shadow: 0 0 40px #99ff33;
+        }
+    </style>
+</head>
+<body>
+<div id="lamp" class="lamp"></div>
+
+<br>
+
+<select id="type">
+    <option value="normal">Звичайна</option>
+    <option value="eco">Енергозберігаюча</option>
+    <option value="led">Світлодіодна</option>
+</select>
+
+<br><br>
+
+<button onclick="toggleLamp()">Включити / Виключити</button>
+<button onclick="setBrightness()">Яскравість</button>
+
+<script src="index.js"></script>
+
+</body>
+</html>

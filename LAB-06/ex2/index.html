@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Список завдань</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<div class="app">
+    <h1>Список завдань</h1>
+
+    <form id="taskForm">
+        <input type="text" id="taskInput" placeholder="Нове завдання" required minlength="2" />
+        <button type="submit">Додати</button>
+    </form>
+
+    <select id="sortSelect">
+        <option value="date">За датою створення</option>
+        <option value="status">За статусом</option>
+        <option value="updated">За датою оновлення</option>
+    </select>
+
+    <ul id="taskList"></ul>
+</div>
+
+<script src="index.js">
+</script>
+</body>
+</html>

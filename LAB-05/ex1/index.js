@@ -38,5 +38,5 @@ function resetTimer() {
         isOn = false;
         lamp.className = "lamp";
         alert("Лампочка автоматично вимкнулась!");
-    }, 30000);
+    }, 3000);
 }

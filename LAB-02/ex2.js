@@ -1,4 +1,4 @@
-let number = 8;
+let number = 7;
 let bool;
 
 if (number >=3 && number <=7) {

@@ -48,7 +48,7 @@ function startGame() {
     showLevel.textContent = 'level: ' + level;
 
     gunman.classList.add(`gunman-level-${level}`);
-    //обробник події завершення анімації руху
+
     gunman.addEventListener('transitionend', prepareForDuel);
 
     const random = Math.floor(Math.random() * 2) + 1;
@@ -98,7 +98,7 @@ function moveGunman(side) {
     setTimeout(() => {
         gunman.classList.add(`moving-${side}`);
         introSound.play();
-        introSound.loop = true;//зациклення звуку
+        introSound.loop = true;
     }, 10);
 }
 
@@ -133,7 +133,7 @@ function prepareForDuel() {
 function timeCounter(start) {
     const updateTime = () => {
         const now = Date.now();
-        if (readyToDuel) { //якщо дуель ще триває
+        if (readyToDuel) {
             time = ((now - start + 10) / 1000).toFixed(2);
             timeYou.innerHTML = time;
             setTimeout(updateTime, 10);
@@ -143,9 +143,9 @@ function timeCounter(start) {
 }
 
 function gunmanShootsPlayer() {
-    if (!readyToDuel) return;//якщо дуель завершена
+    if (!readyToDuel) return;
 
-    readyToDuel = false;//позначка що дуель завершена
+    readyToDuel = false;
     gunman.classList.remove('standing');
     gunman.classList.add(`gunman-level-${level}__shooting`);
 

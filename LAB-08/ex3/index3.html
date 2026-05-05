@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Моя дошка завдань</title>
+    <link rel="stylesheet" href="style3.css">
+</head>
+<body>
+<main class="page">
+    <header class="topbar">
+        <p class="eyebrow"> kanban</p>
+        <h1>Дошка завдань</h1>
+    </header>
+
+    <section class="board" aria-label="Kanban board">
+        <article class="column" id="todo">
+            <div class="column-header">
+                <h2>План</h2>
+                <span>1</span>
+            </div>
+
+            <div class="task" draggable="true" id="task1">
+                <h3>Завдання 1</h3>
+                <p>Короткий опис першого завдання.</p>
+            </div>
+
+            <div class="task" draggable="true" id="task2">
+                <h3>Завдання 2</h3>
+                <p>Підготувати матеріали.</p>
+            </div>
+        </article>
+
+        <article class="column" id="in-progress">
+            <div class="column-header">
+                <h2>У роботі</h2>
+                <span>2</span>
+            </div>
+
+            <div class="task" draggable="true" id="task3">
+                <h3>Завдання 3</h3>
+                <p>Виконати основну частину.</p>
+            </div>
+        </article>
+
+        <article class="column" id="done">
+            <div class="column-header">
+                <h2>Готово</h2>
+                <span>3</span>
+            </div>
+
+            <div class="task" draggable="true" id="task4">
+                <h3>Завдання 4</h3>
+                <p>Перевірити результат.</p>
+            </div>
+        </article>
+    </section>
+</main>
+
+<script src="script3.js"></script>
+</body>
+</html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Лабораторна робота №9 — Форми</title>
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<main class="page">
+    <section class="form-card">
+        <div class="tabs">
+            <button class="tab-btn active" data-tab="signup">Signup</button>
+            <button class="tab-btn" data-tab="login">Login</button>
+        </div>
+
+        <div id="successMessage" class="success-message"></div>
+
+        <form id="signupForm" class="form active" novalidate>
+            <h1>Create an account</h1>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="firstName">First Name</label>
+                    <input id="firstName" name="firstName" type="text" placeholder="Enter first name" />
+                    <small class="error"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="lastName">Last Name</label>
+                    <input id="lastName" name="lastName" type="text" placeholder="Enter last name" />
+                    <small class="error"></small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="signupEmail">Email</label>
+                <input id="signupEmail" name="email" type="email" placeholder="Enter email" />
+                <small class="error"></small>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="signupPassword">Password</label>
+                    <div class="password-box">
+                        <input id="signupPassword" name="password" type="password" placeholder="Enter password" />
+                        <button type="button" class="toggle-password" data-target="signupPassword">👁</button>
+                    </div>
+                    <small class="error"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="confirmPassword">Confirm Password</label>
+                    <div class="password-box">
+                        <input id="confirmPassword" name="confirmPassword" type="password" placeholder="Confirm password" />
+                        <button type="button" class="toggle-password" data-target="confirmPassword">👁</button>
+                    </div>
+                    <small class="error"></small>
+                </div>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Phone</label>
+                <input id="phone" name="phone" type="tel" placeholder="+380XXXXXXXXX" />
+                <small class="error"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="birthDate">Date Birth</label>
+                <input id="birthDate" name="birthDate" type="date" />
+                <small class="error"></small>
+            </div>
+
+            <div class="form-group">
+                <label>Sex</label>
+                <div class="radio-group">
+                    <label>
+                        <input type="radio" name="sex" value="male" />
+                        Male
+                    </label>
+
+                    <label>
+                        <input type="radio" name="sex" value="female" />
+                        Female
+                    </label>
+                </div>
+                <small class="error" id="sexError"></small>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group">
+                    <label for="country">Country</label>
+                    <select id="country" name="country">
+                        <option value="">Choose country...</option>
+                        <option value="Ukraine">Ukraine</option>
+                        <option value="Poland">Poland</option>
+                        <option value="Germany">Germany</option>
+                        <option value="USA">USA</option>
+                    </select>
+                    <small class="error"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="city">City</label>
+                    <select id="city" name="city" disabled>
+                        <option value="">Choose city...</option>
+                    </select>
+                    <small class="error"></small>
+                </div>
+            </div>
+
+            <button type="submit" class="submit-btn">Signup</button>
+        </form>
+
+        <form id="loginForm" class="form" novalidate>
+            <h1>Login here</h1>
+
+            <div class="form-group">
+                <label for="username">Username</label>
+                <input id="username" name="username" type="text" placeholder="Enter username" />
+                <small class="error"></small>
+            </div>
+
+            <div class="form-group">
+                <label for="loginPassword">Password</label>
+                <div class="password-box">
+                    <input id="loginPassword" name="password" type="password" placeholder="Enter password" />
+                    <button type="button" class="toggle-password" data-target="loginPassword">👁</button>
+                </div>
+                <small class="error"></small>
+            </div>
+
+            <label class="remember">
+                <input id="rememberMe" name="rememberMe" type="checkbox" />
+                Remember Me
+            </label>
+
+            <button type="submit" class="submit-btn">Login</button>
+        </form>
+    </section>
+</main>
+
+<script src="script.js"></script>
+</body>
+</html>

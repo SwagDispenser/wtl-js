@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Friend Search</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div id="app">
+    <div id="auth-container" class="container">
+        <section class="auth-card">
+            <div class="auth-tabs">
+                <button type="button" class="auth-tab-btn active" data-auth-tab="signup">Signup</button>
+                <button type="button" class="auth-tab-btn" data-auth-tab="login">Login</button>
+            </div>
+
+            <div id="auth-success-message" class="success-message"></div>
+
+            <form id="register-form" class="auth-panel active" novalidate>
+                <h1>Create an account</h1>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="register-first-name">First Name</label>
+                        <input id="register-first-name" name="firstName" type="text" placeholder="Enter first name">
+                        <small class="error"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="register-last-name">Last Name</label>
+                        <input id="register-last-name" name="lastName" type="text" placeholder="Enter last name">
+                        <small class="error"></small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="register-email">Email</label>
+                    <input id="register-email" name="email" type="email" placeholder="Enter email">
+                    <small class="error"></small>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="register-password">Password</label>
+                        <div class="password-box">
+                            <input id="register-password" name="password" type="password" placeholder="Enter password">
+                            <button type="button" class="toggle-password" data-target="register-password">👁</button>
+                        </div>
+                        <small class="error"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="register-confirm-password">Confirm Password</label>
+                        <div class="password-box">
+                            <input id="register-confirm-password" name="confirmPassword" type="password" placeholder="Confirm password">
+                            <button type="button" class="toggle-password" data-target="register-confirm-password">👁</button>
+                        </div>
+                        <small class="error"></small>
+                    </div>
+                </div>
+
+                <div class="form-group">
+                    <label for="register-phone">Phone</label>
+                    <input id="register-phone" name="phone" type="tel" placeholder="+380XXXXXXXXX">
+                    <small class="error"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="register-birth-date">Date Birth</label>
+                    <input id="register-birth-date" name="birthDate" type="date">
+                    <small class="error"></small>
+                </div>
+
+                <div class="form-group">
+                    <label>Sex</label>
+                    <div class="radio-group">
+                        <label><input type="radio" name="sex" value="male"> Male</label>
+                        <label><input type="radio" name="sex" value="female"> Female</label>
+                    </div>
+                    <small class="error" id="register-sex-error"></small>
+                </div>
+
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="register-country">Country</label>
+                        <select id="register-country" name="country">
+                            <option value="">Choose country...</option>
+                            <option value="Ukraine">Ukraine</option>
+                            <option value="Poland">Poland</option>
+                            <option value="Germany">Germany</option>
+                            <option value="USA">USA</option>
+                        </select>
+                        <small class="error"></small>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="register-city">City</label>
+                        <select id="register-city" name="city" disabled>
+                            <option value="">Choose city...</option>
+                        </select>
+                        <small class="error"></small>
+                    </div>
+                </div>
+
+                <button type="submit" class="submit-btn">Signup</button>
+            </form>
+
+            <form id="login-form" class="auth-panel" novalidate>
+                <h1>Login here</h1>
+
+                <div class="form-group">
+                    <label for="login-email">Email</label>
+                    <input id="login-email" name="email" type="email" placeholder="Enter email">
+                    <small class="error"></small>
+                </div>
+
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <div class="password-box">
+                        <input id="login-password" name="password" type="password" placeholder="Enter password">
+                        <button type="button" class="toggle-password" data-target="login-password">👁</button>
+                    </div>
+                    <small class="error"></small>
+                </div>
+
+                <label class="remember">
+                    <input id="remember-me" name="rememberMe" type="checkbox">
+                    Remember Me
+                </label>
+
+                <button type="submit" class="submit-btn">Login</button>
+            </form>
+        </section>
+    </div>
+
+    <div id="main-container" class="hidden">
+        <header>
+            <div class="header-content">
+                <h1>FriendSearch</h1>
+                <div class="user-info">
+                    <span id="current-user"></span>
+                    <button id="logout-btn">Logout</button>
+                </div>
+            </div>
+        </header>
+
+        <main>
+            <div class="controls">
+                <div class="search-container">
+                    <i class="fas fa-search"></i>
+                    <input type="text" id="search-input" placeholder="Search friends...">
+                </div>
+                <nav class="tabs">
+                    <button class="tab-btn active" data-tab="all">All Friends</button>
+                    <button class="tab-btn" data-tab="favorites">Favorites</button>
+                </nav>
+                <div class="filter-sort-container">
+                    <div class="filter-section">
+                        <h3>Filters</h3>
+                        <div class="filter-group">
+                            <label for="age-range-inputs">Age Range:</label>
+                            <div class="range-inputs" id="age-range-inputs">
+                                <input type="number" id="min-age" placeholder="Min" min="18" max="100">
+                                <span>-</span>
+                                <input type="number" id="max-age" placeholder="Max" min="18" max="100">
+                            </div>
+                        </div>
+                        <div class="filter-group">
+                            <label for="gender-filter">Gender:</label>
+                            <select id="gender-filter">
+                                <option value="all">All</option>
+                                <option value="male">Male</option>
+                                <option value="female">Female</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="country-filter">Country:</label>
+                            <select id="country-filter">
+                                <option value="all">All</option>
+                            </select>
+                        </div>
+                        <div class="filter-group">
+                            <label for="email-filter">Email:</label>
+                            <input type="text" id="email-filter" placeholder="Filter by email...">
+                        </div>
+                    </div>
+
+                    <div class="sort-section">
+                        <h3>Sort By</h3>
+                        <div class="sort-group">
+                            <select id="sort-by">
+                                <option value="name-asc">Name (A-Z)</option>
+                                <option value="name-desc">Name (Z-A)</option>
+                                <option value="age-asc">Age (Low to High)</option>
+                                <option value="age-desc">Age (High to Low)</option>
+                                <option value="registered-asc">Registration Date (Oldest)</option>
+                                <option value="registered-desc">Registration Date (Newest)</option>
+                            </select>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div id="error-message" class="hidden"></div>
+
+            <div id="loading-spinner" class="hidden">
+                <div class="spinner"></div>
+            </div>
+
+            <div id="user-cards-container"></div>
+
+            <div id="pagination-container">
+                <div class="pagination">
+                    <div id="page-numbers"></div>
+                </div>
+            </div>
+        </main>
+    </div>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
